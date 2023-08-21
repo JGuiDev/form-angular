@@ -1,0 +1,36 @@
+<div class="form-container">
+    <form (ngSubmit)="submit()" [formGroup]="userForm" #formDir="ngForm">
+        <div class="title"><h1>Formulário de Cadastro</h1></div>
+        <div class="date">
+            <label for="firstName">Nome</label>
+            <input type="text" name="firstName" formControlName="firstName" required>
+            <div *ngIf="firstName.invalid && formDir.submitted" class="validation-error">
+                <p>Este campo é obrigatório!</p>
+            </div>
+        </div>
+        <div class="date">
+            <label for="lastName">Sobrenome</label>
+            <input type="text" name="lastName" formControlName="lastName" required>
+            <div *ngIf="lastName.invalid && formDir.submitted" class="validation-error">
+                <p>Este campo é obrigatório!</p>
+            </div>
+        </div>
+        <div class="date">
+            <label for="profession">Profissão</label>
+            <input type="text" name="profession" formControlName="profession" required>
+            <div *ngIf="profession.invalid && formDir.submitted" class="validation-error">
+                <p>Este campo é obrigatório!</p>
+            </div>
+        </div>
+
+        <div class="field-image-file">
+            <div class="back-img">
+                <img [src]="url" alt="image-test" >
+            </div>
+            <input type="file" name="img-file" (change)="onselectFile($event)">
+        </div>
+        <div class="btn-field">
+            <input type="submit" value="Enviar">
+        </div>
+    </form>
+</div>

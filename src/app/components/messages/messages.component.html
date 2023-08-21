@@ -1,0 +1,7 @@
+<div class="message" *ngIf="messagesService.message">
+    <div class="top">
+        <h2>Mensagem do sistema</h2>
+        <i class="fa-solid fa-xmark" (click)="messagesService.clear()"></i>
+    </div>
+    <p>{{messagesService.message}}</p>
+</div>
